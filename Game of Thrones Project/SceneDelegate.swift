@@ -43,7 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 case .error:
                     DispatchQueue.main.async {
                         print("Error")
-                        nav = UINavigationController(rootViewController: ErrorViewController())
+                        nav = UINavigationController(rootViewController: ErrorViewController(appState: self.appState))
                         self.window?.rootViewController = nav
                         self.window?.makeKeyAndVisible()
                     }
