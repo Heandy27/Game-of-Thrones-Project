@@ -31,6 +31,9 @@
 		BFDD35A82DA2F25800D19F9E /* HttpResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD35A72DA2F25300D19F9E /* HttpResponseCode.swift */; };
 		BFDD35AA2DA2F28800D19F9E /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD35A92DA2F28200D19F9E /* HttpMethods.swift */; };
 		BFDD35AC2DA2F2A500D19F9E /* ErrorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD35AB2DA2F29F00D19F9E /* ErrorApp.swift */; };
+		BFF2DF9D2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF2DF9B2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift */; };
+		BFF2DFA12DADD52C008ABFBB /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF2DFA02DADD527008ABFBB /* MockURLProtocol.swift */; };
+		BFF2DFA32DADD5D4008ABFBB /* CharacterNetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF2DFA22DADD5D4008ABFBB /* CharacterNetworkTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,15 +74,10 @@
 		BFDD35A92DA2F28200D19F9E /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
 		BFDD35AB2DA2F29F00D19F9E /* ErrorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorApp.swift; sourceTree = "<group>"; };
 		BFE3E34D2DA17F6D00D38A95 /* Game of Thrones Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game of Thrones Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFF2DF9B2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_of_Thrones_ProjectTests.swift; sourceTree = "<group>"; };
+		BFF2DFA02DADD527008ABFBB /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		BFF2DFA22DADD5D4008ABFBB /* CharacterNetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNetworkTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		BF4EF3732DA6DDD300E27B40 /* Game of Thrones ProjectTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Game of Thrones ProjectTests";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF4EF36F2DA6DDD300E27B40 /* Frameworks */ = {
@@ -263,7 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				BFDD35782DA2E56300D19F9E /* Game of Thrones Project */,
-				BF4EF3732DA6DDD300E27B40 /* Game of Thrones ProjectTests */,
+				BFF2DF9C2DADD48A008ABFBB /* Game of Thrones ProjectTests */,
 				BFE3E34E2DA17F6D00D38A95 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -275,6 +273,32 @@
 				BF4EF3722DA6DDD300E27B40 /* Game of Thrones ProjectTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BFF2DF9C2DADD48A008ABFBB /* Game of Thrones ProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFF2DF9F2DADD51F008ABFBB /* Mocks */,
+				BFF2DF9E2DADD48C008ABFBB /* Network */,
+				BFF2DF9B2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift */,
+			);
+			path = "Game of Thrones ProjectTests";
+			sourceTree = "<group>";
+		};
+		BFF2DF9E2DADD48C008ABFBB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BFF2DFA22DADD5D4008ABFBB /* CharacterNetworkTest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BFF2DF9F2DADD51F008ABFBB /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BFF2DFA02DADD527008ABFBB /* MockURLProtocol.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,9 +316,6 @@
 			);
 			dependencies = (
 				BF4EF3772DA6DDD300E27B40 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				BF4EF3732DA6DDD300E27B40 /* Game of Thrones ProjectTests */,
 			);
 			name = "Game of Thrones ProjectTests";
 			packageProductDependencies = (
@@ -385,6 +406,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF2DF9D2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift in Sources */,
+				BFF2DFA32DADD5D4008ABFBB /* CharacterNetworkTest.swift in Sources */,
+				BFF2DFA12DADD52C008ABFBB /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
