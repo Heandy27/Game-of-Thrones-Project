@@ -25,9 +25,10 @@ final class CharacterNetworkTest: XCTestCase {
     
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        
-        MockURLProtocol.stubResponseData = nil
         sut = nil
+        MockURLProtocol.stubResponseData = nil
+        MockURLProtocol.error = nil
+        MockURLProtocol.stubStatusCode = 200
     }
     
     func testCharacterNetwork_WhenGivenValidJSON_ReturnParsedCharacters() {
@@ -62,6 +63,7 @@ final class CharacterNetworkTest: XCTestCase {
                 XCTAssertEqual(characters.first?.title, "Mother of Dragons")
                 XCTAssertEqual(characters.first?.family, "House Targaryen")
                 XCTAssertEqual(characters.first?.imageUrl, "https://thronesapi.com/assets/images/daenerys.jpg")
+                XCTAssertEqual(characters.count, 1)
                 expectation.fulfill()
             case .failure(let failure):
                 XCTFail("Expected success, but got error: \(failure)")
@@ -105,4 +107,47 @@ final class CharacterNetworkTest: XCTestCase {
         
     }
     
+    
+    func testCharacterNetwork_WhenGivenURLRequestFails_ShouldReturnErrorMessageDescription() {
+        // Given
+        let expectation = self.expectation(description: "A failed request url expectation")
+        let expectedError = NSError(domain: "", code: 0, userInfo: nil)
+        MockURLProtocol.error = expectedError
+        // When
+        
+        sut.getCharacters { result in
+            switch result {
+            case .success(_):
+                XCTFail("Expected failure, but received success")
+            case .failure(let failure):
+                // Then
+                print("Aqui esta desde los tests \(failure)")
+                XCTAssertEqual(failure, ErrorApp.errorFromServer(error: expectedError.localizedDescription))
+                expectation.fulfill()
+            }
+        }
+        
+        self.wait(for: [expectation], timeout: 5)
+        
+    }
+    
+    func testCharacterNetwork_WhenGivenStatusCodeFails_ShouldReturnErrorStatusCodeInt() {
+        MockURLProtocol.error = nil
+        MockURLProtocol.stubStatusCode = 500
+        MockURLProtocol.stubResponseData = Data() // puede haber o no data
+        
+        let expectation = self.expectation(description: "api error")
+        
+        sut.getCharacters { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .errorFromApi(statuscode: 500))
+            default:
+                XCTFail("Expected errorFromApi")
+            }
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }

@@ -13,6 +13,7 @@
 		BF2BBE912DA49FEE00CDB206 /* CharacterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2BBE902DA49FEA00CDB206 /* CharacterUseCase.swift */; };
 		BF2BBE932DA4A05900CDB206 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2BBE922DA4A04A00CDB206 /* HomeViewModel.swift */; };
 		BF2BBE972DA4A50300CDB206 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2BBE962DA4A4F800CDB206 /* UIImage+Extensions.swift */; };
+		BF39F8A12DAF2F0F008991B7 /* CharacterRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39F8A02DAF2F0F008991B7 /* CharacterRepositoryTests.swift */; };
 		BF6E58952DA9A03200AA3E18 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E58942DA9A02F00AA3E18 /* AppState.swift */; };
 		BF6E58A02DA9A06300AA3E18 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E589F2DA9A06300AA3E18 /* StatusModel.swift */; };
 		BF6E58A42DA9A47400AA3E18 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E58A32DA9A47400AA3E18 /* LoadingViewController.swift */; };
@@ -31,7 +32,6 @@
 		BFDD35A82DA2F25800D19F9E /* HttpResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD35A72DA2F25300D19F9E /* HttpResponseCode.swift */; };
 		BFDD35AA2DA2F28800D19F9E /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD35A92DA2F28200D19F9E /* HttpMethods.swift */; };
 		BFDD35AC2DA2F2A500D19F9E /* ErrorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDD35AB2DA2F29F00D19F9E /* ErrorApp.swift */; };
-		BFF2DF9D2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF2DF9B2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift */; };
 		BFF2DFA12DADD52C008ABFBB /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF2DFA02DADD527008ABFBB /* MockURLProtocol.swift */; };
 		BFF2DFA32DADD5D4008ABFBB /* CharacterNetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF2DFA22DADD5D4008ABFBB /* CharacterNetworkTest.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +53,7 @@
 		BF2BBE902DA49FEA00CDB206 /* CharacterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterUseCase.swift; sourceTree = "<group>"; };
 		BF2BBE922DA4A04A00CDB206 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BF2BBE962DA4A4F800CDB206 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		BF39F8A02DAF2F0F008991B7 /* CharacterRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryTests.swift; sourceTree = "<group>"; };
 		BF4EF3722DA6DDD300E27B40 /* Game of Thrones ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game of Thrones ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6E58942DA9A02F00AA3E18 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BF6E589F2DA9A06300AA3E18 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		BFDD35A92DA2F28200D19F9E /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
 		BFDD35AB2DA2F29F00D19F9E /* ErrorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorApp.swift; sourceTree = "<group>"; };
 		BFE3E34D2DA17F6D00D38A95 /* Game of Thrones Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game of Thrones Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFF2DF9B2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_of_Thrones_ProjectTests.swift; sourceTree = "<group>"; };
 		BFF2DFA02DADD527008ABFBB /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		BFF2DFA22DADD5D4008ABFBB /* CharacterNetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNetworkTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +97,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF39F89E2DAF2ECE008991B7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BF39F8A02DAF2F0F008991B7 /* CharacterRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		BF39F89F2DAF2ED5008991B7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BF39F89E2DAF2ECE008991B7 /* Repository */,
+				BFF2DF9E2DADD48C008ABFBB /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		BFDD35782DA2E56300D19F9E /* Game of Thrones Project */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,9 +295,8 @@
 		BFF2DF9C2DADD48A008ABFBB /* Game of Thrones ProjectTests */ = {
 			isa = PBXGroup;
 			children = (
+				BF39F89F2DAF2ED5008991B7 /* Data */,
 				BFF2DF9F2DADD51F008ABFBB /* Mocks */,
-				BFF2DF9E2DADD48C008ABFBB /* Network */,
-				BFF2DF9B2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift */,
 			);
 			path = "Game of Thrones ProjectTests";
 			sourceTree = "<group>";
@@ -406,8 +422,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFF2DF9D2DADD48A008ABFBB /* Game_of_Thrones_ProjectTests.swift in Sources */,
 				BFF2DFA32DADD5D4008ABFBB /* CharacterNetworkTest.swift in Sources */,
+				BF39F8A12DAF2F0F008991B7 /* CharacterRepositoryTests.swift in Sources */,
 				BFF2DFA12DADD52C008ABFBB /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

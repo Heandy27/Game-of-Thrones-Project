@@ -1,21 +1,27 @@
 //
-//  Game_of_Thrones_ProjectTests.swift
+//  CharacterRepositoryTests.swift
 //  Game of Thrones ProjectTests
 //
-//  Created by Andy Heredia on 9/4/25.
+//  Created by Andy Heredia on 15/4/25.
 //
 
 import XCTest
+@testable import Game_of_Thrones_Project
 
-final class Game_of_Thrones_ProjectTests: XCTestCase {
+final class CharacterRepositoryTests: XCTestCase {
+    
+    var mockNetwork: CharacterNetworkMock!
+    var mockRepository: CharacterRepositoryMock!
 
-    // Este método se llama antes de la invocación de cada método de prueba en la clase.
     override func setUpWithError() throws {
-        // Put setup code here.
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockNetwork = CharacterNetworkMock(resultToReturn: .success([]))
+        mockRepository = CharacterRepositoryMock(network: mockNetwork)
     }
-    // Coloque aquí el código de desmontaje. Este método se llama después de cada método de prueba de la clase.
+
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        mockNetwork = nil
+        mockRepository = nil
     }
 
     func testExample() throws {
@@ -28,7 +34,7 @@ final class Game_of_Thrones_ProjectTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

@@ -4,7 +4,7 @@ enum ErrorApp: Error, CustomStringConvertible, Equatable, LocalizedError {
     
     
     case requestWasNil
-    case errorFromServer(error: Error)
+    case errorFromServer(error: String)
     case errorFromApi(statuscode: Int)
     case noDataReceived
     case errorParsingData
@@ -19,7 +19,7 @@ enum ErrorApp: Error, CustomStringConvertible, Equatable, LocalizedError {
         case .requestWasNil:
             return "Error creating request"
         case .errorFromServer(error: let error):
-            return "Received error from server \((error as NSError).code)"
+            return "Received error from server \(error)"
         case .errorFromApi(statuscode: let statuscode):
             return "Received error from api status code \(statuscode)"
         case .noDataReceived:

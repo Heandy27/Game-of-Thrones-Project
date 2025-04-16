@@ -26,8 +26,10 @@ final class CharacterNetwork: CharacterNetworkProtocol {
         request.httpMethod = HttpMethods.get
         
         let task = urlSession.dataTask(with: request) { data, response, error in
-            if let error {
-                return completion(.failure(ErrorApp.errorFromServer(error: error)))
+            if let error = error {
+                print("aqui esta el error desde el network \(error)")
+                completion(.failure(ErrorApp.errorFromServer(error: error.localizedDescription)))
+                return
             }
             
             guard let httpResponse = response as? HTTPURLResponse,
@@ -36,7 +38,8 @@ final class CharacterNetwork: CharacterNetworkProtocol {
             }
             
             guard let data = data else {
-                return completion(.failure(.noDataReceived))
+                completion(.failure(.noDataReceived))
+                return
             }
             
             do {
@@ -51,4 +54,21 @@ final class CharacterNetwork: CharacterNetworkProtocol {
     }
     
     
+}
+
+
+// MARK: MOCK
+
+final class CharacterNetworkMock: CharacterNetworkProtocol {
+    
+    var resultToReturn: Result<[GOTResponse], ErrorApp>
+    
+    
+    init(resultToReturn: Result<[GOTResponse], ErrorApp>) {
+        self.resultToReturn = resultToReturn
+    }
+    
+    func getCharacters(completion: @escaping (Result<[GOTResponse], ErrorApp>) -> Void) {
+        completion(resultToReturn)
+    }
 }

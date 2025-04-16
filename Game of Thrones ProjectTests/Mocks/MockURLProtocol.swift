@@ -3,6 +3,7 @@ import Foundation
 class MockURLProtocol: URLProtocol {
     static var stubResponseData: Data?
     static var error: Error?
+    static var stubStatusCode: Int = 200
     
     
     override class func canInit(with request: URLRequest) -> Bool {
@@ -19,16 +20,18 @@ class MockURLProtocol: URLProtocol {
             self.client?.urlProtocol(self, didFailWithError: error)
             return
         }
-
+        
         if let data = MockURLProtocol.stubResponseData {
             let response = HTTPURLResponse(
                 url: request.url!,
-                statusCode: 200,
+                statusCode: MockURLProtocol.stubStatusCode,
                 httpVersion: nil,
                 headerFields: nil
             )!
             self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed) // cacheStoragePolicy: .notAllowed → le indica que no almacene esta respuesta en caché.
-            self.client?.urlProtocol(self, didLoad: data)
+       
+                      self.client?.urlProtocol(self, didLoad: data)
+                  
         }
 
         self.client?.urlProtocolDidFinishLoading(self)
