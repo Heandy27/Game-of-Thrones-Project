@@ -14,6 +14,13 @@
 		BF2BBE932DA4A05900CDB206 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2BBE922DA4A04A00CDB206 /* HomeViewModel.swift */; };
 		BF2BBE972DA4A50300CDB206 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2BBE962DA4A4F800CDB206 /* UIImage+Extensions.swift */; };
 		BF39F8A12DAF2F0F008991B7 /* CharacterRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39F8A02DAF2F0F008991B7 /* CharacterRepositoryTests.swift */; };
+		BF4C10762DB0131C00370DED /* ErrorAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C10752DB0131C00370DED /* ErrorAppTests.swift */; };
+		BF4C10812DB01ACA00370DED /* HttpMethodsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C10802DB01ACA00370DED /* HttpMethodsTests.swift */; };
+		BF4C10832DB01D4D00370DED /* HttpResponseCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C10822DB01D4D00370DED /* HttpResponseCodeTests.swift */; };
+		BF4C10852DB025C100370DED /* EndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C10842DB025C100370DED /* EndpointsTests.swift */; };
+		BF4C10892DB0268600370DED /* ConstantsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C10882DB0268600370DED /* ConstantsAppTests.swift */; };
+		BF4C108D2DB02AF600370DED /* CharacterUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C108C2DB02AF600370DED /* CharacterUseCaseTests.swift */; };
+		BF4C10902DB031EF00370DED /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C108F2DB031EE00370DED /* HomeViewModelTests.swift */; };
 		BF6E58952DA9A03200AA3E18 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E58942DA9A02F00AA3E18 /* AppState.swift */; };
 		BF6E58A02DA9A06300AA3E18 /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E589F2DA9A06300AA3E18 /* StatusModel.swift */; };
 		BF6E58A42DA9A47400AA3E18 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E58A32DA9A47400AA3E18 /* LoadingViewController.swift */; };
@@ -54,6 +61,13 @@
 		BF2BBE922DA4A04A00CDB206 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		BF2BBE962DA4A4F800CDB206 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		BF39F8A02DAF2F0F008991B7 /* CharacterRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryTests.swift; sourceTree = "<group>"; };
+		BF4C10752DB0131C00370DED /* ErrorAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAppTests.swift; sourceTree = "<group>"; };
+		BF4C10802DB01ACA00370DED /* HttpMethodsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethodsTests.swift; sourceTree = "<group>"; };
+		BF4C10822DB01D4D00370DED /* HttpResponseCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseCodeTests.swift; sourceTree = "<group>"; };
+		BF4C10842DB025C100370DED /* EndpointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsTests.swift; sourceTree = "<group>"; };
+		BF4C10882DB0268600370DED /* ConstantsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAppTests.swift; sourceTree = "<group>"; };
+		BF4C108C2DB02AF600370DED /* CharacterUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterUseCaseTests.swift; sourceTree = "<group>"; };
+		BF4C108F2DB031EE00370DED /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		BF4EF3722DA6DDD300E27B40 /* Game of Thrones ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game of Thrones ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6E58942DA9A02F00AA3E18 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		BF6E589F2DA9A06300AA3E18 /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
@@ -112,6 +126,50 @@
 				BFF2DF9E2DADD48C008ABFBB /* Network */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		BF4C10742DB0130100370DED /* BaseNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				BF4C10752DB0131C00370DED /* ErrorAppTests.swift */,
+				BF4C10802DB01ACA00370DED /* HttpMethodsTests.swift */,
+				BF4C10822DB01D4D00370DED /* HttpResponseCodeTests.swift */,
+				BF4C10842DB025C100370DED /* EndpointsTests.swift */,
+			);
+			path = BaseNetwork;
+			sourceTree = "<group>";
+		};
+		BF4C10862DB0265F00370DED /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BF4C108B2DB02AE200370DED /* UseCase */,
+				BF4C10872DB0266F00370DED /* Tools */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BF4C10872DB0266F00370DED /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BF4C10882DB0268600370DED /* ConstantsAppTests.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		BF4C108B2DB02AE200370DED /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				BF4C108C2DB02AF600370DED /* CharacterUseCaseTests.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		BF4C108E2DB031DD00370DED /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BF4C108F2DB031EE00370DED /* HomeViewModelTests.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		BFDD35782DA2E56300D19F9E /* Game of Thrones Project */ = {
@@ -295,6 +353,8 @@
 		BFF2DF9C2DADD48A008ABFBB /* Game of Thrones ProjectTests */ = {
 			isa = PBXGroup;
 			children = (
+				BF4C108E2DB031DD00370DED /* Presentation */,
+				BF4C10862DB0265F00370DED /* Domain */,
 				BF39F89F2DAF2ED5008991B7 /* Data */,
 				BFF2DF9F2DADD51F008ABFBB /* Mocks */,
 			);
@@ -305,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				BFF2DFA22DADD5D4008ABFBB /* CharacterNetworkTest.swift */,
+				BF4C10742DB0130100370DED /* BaseNetwork */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -422,7 +483,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF4C10812DB01ACA00370DED /* HttpMethodsTests.swift in Sources */,
+				BF4C108D2DB02AF600370DED /* CharacterUseCaseTests.swift in Sources */,
+				BF4C10762DB0131C00370DED /* ErrorAppTests.swift in Sources */,
 				BFF2DFA32DADD5D4008ABFBB /* CharacterNetworkTest.swift in Sources */,
+				BF4C10892DB0268600370DED /* ConstantsAppTests.swift in Sources */,
+				BF4C10902DB031EF00370DED /* HomeViewModelTests.swift in Sources */,
+				BF4C10852DB025C100370DED /* EndpointsTests.swift in Sources */,
+				BF4C10832DB01D4D00370DED /* HttpResponseCodeTests.swift in Sources */,
 				BF39F8A12DAF2F0F008991B7 /* CharacterRepositoryTests.swift in Sources */,
 				BFF2DFA12DADD52C008ABFBB /* MockURLProtocol.swift in Sources */,
 			);

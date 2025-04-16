@@ -13,3 +13,20 @@ final class CharacterUseCase: CharacterUseCaseProtocol {
     
     
 }
+
+
+// Mock
+
+final class CharacterUseCaseMock: CharacterUseCaseProtocol {
+   
+    var repo: CharacterRepositoryProtocol
+    
+    init(repo: CharacterRepositoryProtocol) {
+        self.repo = repo
+    }
+    
+    func getCharacters(completion: @escaping (Result<[GOTResponse], ErrorApp>) -> Void) {
+        repo.getCharacters(completion: completion)
+    }
+    
+}

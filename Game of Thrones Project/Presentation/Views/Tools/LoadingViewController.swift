@@ -33,7 +33,6 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Loading"
         view.addSubview(backgroundUIImageView)
         backgroundUIImageView.frame = view.bounds
         view.addSubview(activityIndicatorView)

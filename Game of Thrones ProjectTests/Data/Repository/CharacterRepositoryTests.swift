@@ -14,8 +14,28 @@ final class CharacterRepositoryTests: XCTestCase {
     var mockRepository: CharacterRepositoryMock!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        mockNetwork = CharacterNetworkMock(resultToReturn: .success([]))
+        // Given: Create mock characters to simulate a successful network response
+        let character1 = GOTResponse(
+            id: 1,
+            firstName: "Jon",
+            lastName: "Snow",
+            fullName: "Jon Snow",
+            title: "King of the North",
+            family: "House Stark",
+            imageUrl: "https://thronesapi.com/assets/images/jon-snow.jpg"
+        )
+        
+        let character2 = GOTResponse(
+            id: 2,
+            firstName: "Daenerys",
+            lastName: "Targaryen",
+            fullName: "Daenerys Targaryen",
+            title: "Mother of Dragons",
+            family: "House Targaryen",
+            imageUrl: "https://thronesapi.com/assets/images/daenerys.jpg"
+        )
+        
+        mockNetwork = CharacterNetworkMock(resultToReturn: .success([character1, character2]))
         mockRepository = CharacterRepositoryMock(network: mockNetwork)
     }
 
@@ -24,19 +44,41 @@ final class CharacterRepositoryTests: XCTestCase {
         mockRepository = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testCharacterRepository_returnsExpectedCharacters() throws {
+       // Given
+        let expectation = expectation(description: "Should return characters succesfully")
+    
+        // When
+        mockRepository.getCharacters { result in
+            switch result {
+                // Then
+            case .success(let characters):
+                XCTAssertEqual(characters.count, 2)
+                
+                let jon = characters[0]
+                XCTAssertEqual(jon.firstName, "Jon")
+                XCTAssertEqual(jon.lastName, "Snow")
+                XCTAssertEqual(jon.fullName, "Jon Snow")
+                XCTAssertEqual(jon.title, "King of the North")
+                XCTAssertEqual(jon.family, "House Stark")
+                XCTAssertEqual(jon.imageUrl, "https://thronesapi.com/assets/images/jon-snow.jpg")
+                
+                let daenerys = characters[1]
+                XCTAssertEqual(daenerys.firstName, "Daenerys")
+                XCTAssertEqual(daenerys.lastName, "Targaryen")
+                XCTAssertEqual(daenerys.fullName, "Daenerys Targaryen")
+                XCTAssertEqual(daenerys.title, "Mother of Dragons")
+                XCTAssertEqual(daenerys.family, "House Targaryen")
+                XCTAssertEqual(daenerys.imageUrl, "https://thronesapi.com/assets/images/daenerys.jpg")
+                
+                expectation.fulfill()
+            case .failure(let error):
+                XCTFail("Expected success but got failure with error: \(error)")
+            }
+        }
+      
+        wait(for: [expectation], timeout: 2)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }
